@@ -2,20 +2,15 @@ package com.solomka.service;
 
 import com.solomka.model.Laptop;
 import com.solomka.repository.LaptopRepository;
-import com.solomka.service.LaptopService;
-import lombok.AllArgsConstructor;
-import lombok.NoArgsConstructor;
+
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Repository;
 import org.springframework.stereotype.Service;
 
-import javax.persistence.EntityManager;
-import javax.transaction.Transactional;
 import java.util.List;
 import java.util.NoSuchElementException;
-//
+
+
 @Service
-//@Transactional
 public class LaptopServiceImpl implements LaptopService {
     private final LaptopRepository repository;
 
@@ -36,11 +31,11 @@ public class LaptopServiceImpl implements LaptopService {
 
     @Override
     public Laptop saveLaptop(Laptop laptop) {
-        return  repository.save(laptop);
+        return repository.save(laptop);
     }
 
     @Override
-    public List<Laptop> getLaptopsSortedByBrand(){
+    public List<Laptop> getLaptopsSortedByBrand() {
         return repository.findByOrderByBrandDesc();
     }
 

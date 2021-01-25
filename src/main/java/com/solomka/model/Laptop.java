@@ -8,7 +8,7 @@ import java.io.Serializable;
 import java.util.Date;
 
 @Entity
-@Table//(name = "laptops")
+@Table
 @NoArgsConstructor
 @AllArgsConstructor
 @Data
@@ -22,9 +22,6 @@ public class Laptop implements Serializable {
 
     @Column(name = "brand", nullable = false)
     private String brand;
-
-//    @Embedded
-//    private Processor processor;
 
     @Column(name = "memory_RAM")
     private Integer memoryRAM;
@@ -50,5 +47,4 @@ public class Laptop implements Serializable {
     @DateTimeFormat(pattern = "yyyy-MM-dd")
     @Column(name = "date", nullable = false)
     private Date date;
-
 }
