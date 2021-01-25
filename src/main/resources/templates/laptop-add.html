@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Add laptop</title>
+</head>
+<body>
+<form action="#" th:action="@{/laptop-add}" th:object="${laptop}" method="post">
+    <ul>
+        <li>
+    <label for="brand">Brand</label>
+    <input type="text" th:field="*{brand}" id="brand" >
+        </li><li>
+    <label for="model">Model</label>
+    <input type="text" th:field="*{model}" id="model" >
+    </li><li>
+    <label for="memoryRAM">Memory</label>
+    <input type="number" th:field="*{memoryRAM}" id="memoryRAM" >
+    </li><li>
+    <label for="used">Used</label>
+    <input type="checkbox" th:field="*{used}" id="used" >
+    </li><li>
+    <label for="caseType">Case</label>
+    <input type="text" th:field="*{caseType}" id="caseType" >
+    </li><li>
+    <label for="price">Price</label>
+    <input type="number" th:field="*{price}" id="price" >
+    </li><li>
+    <label for="date">Date of issue</label>
+    <input type="date" th:field="*{date}" id="date" >
+    </li><li>
+    <label for="processorBrand">Processor brand</label>
+    <input type="text" th:field="*{processorBrand}" id="processorBrand">
+    </li><li>
+    <label for="processorModel">Processor model</label>
+    <input type="text" th:field="*{processorModel}" id="processorModel">
+    </li><li>
+    <label for="processorCores">Processor cores</label>
+    <input type="number" th:field="*{processorCores}" id="processorCores">
+    </li>
+    </ul>
+    <input type="submit" value="Add laptop">
+</form>
+</body>
+</html>

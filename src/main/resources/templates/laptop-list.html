@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Laptops</title>
+</head>
+<body>
+<div th:switch="${laptops}">
+    <h2 th:case="null">Data base is empty!</h2>
+    <div th:case="*">
+        <h2>Laptops</h2>
+        <table>
+            <thead>
+            <tr>
+                <th>Id</th>
+                <th>Brand</th>
+                <th>Model</th>
+                <th>Case</th>
+                <th>RAM</th>
+                <th>Processor brand</th>
+                <th>Processor model</th>
+                <th>Processor cores</th>
+                <th>Price</th>
+                <th>Date of issue</th>
+                <th>Used</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr th:each="laptop : ${laptops}">
+                <td th:text="${laptop.id}"></td>
+                <td th:text="${laptop.brand}"></td>
+                <td th:text="${laptop.model}"></td>
+                <td th:text="${laptop.caseType}"></td>
+                <td th:text="${laptop.memoryRAM}"></td>
+                <td th:text="${laptop.processorBrand}"></td>
+                <td th:text="${laptop.processorModel}"></td>
+                <td th:text="${laptop.processorCores}"></td>
+                <td th:text="${laptop.price}"></td>
+                <td th:text="${laptop.date}"></td>
+                <td th:text="${laptop.used}"></td>
+
+            </tr>
+            </tbody>
+        </table>
+    </div>
+    <p><a href="/laptop-add">Add laptop</a></p>
+    <p><a href="/laptop-sort">Sort laptops</a></p>
+    <p><a href="/laptop-memory">Laptops with 16 GB of RAM or more</a></p>
+    <p><a href="/laptop-used">Used laptops</a></p>
+
+</div>
+</body>
+</html>
