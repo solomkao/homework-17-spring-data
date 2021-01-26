@@ -1,0 +1,21 @@
+table {
+    border: 1px solid black;
+    margin: 10px;
+}
+
+tbody td {
+    text-align: right;
+}
+
+html {
+    font-family: 'helvetica neue', helvetica, arial, sans-serif;
+}
+
+input{
+    border: 1px solid black;
+    margin: 6px;
+}
+
+label{
+    margin: 6px;
+}

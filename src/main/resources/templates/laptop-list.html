@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <title>Laptops</title>
+    <link th:href="@{/styles/cssandjs/main.css}" rel="stylesheet" />
 </head>
 <body>
 <div th:switch="${laptops}">
@@ -43,11 +44,18 @@
             </tbody>
         </table>
     </div>
-    <p><a href="/laptop-add">Add laptop</a></p>
-    <p><a href="/laptop-sort">Sort laptops</a></p>
-    <p><a href="/laptop-memory">Laptops with 16 GB of RAM or more</a></p>
-    <p><a href="/laptop-used">Used laptops</a></p>
-
+    <form action="/laptop-add">
+        <input type="submit" value="Add laptop" />
+    </form>
+    <form action="/laptop-sort">
+        <input type="submit" value="Sort laptops" />
+    </form>
+    <form action="/laptop-memory">
+        <input type="submit" value="Laptops with 16 GB of RAM or mor" />
+    </form>
+    <form action="/laptop-used">
+        <input type="submit" value="Used laptops" />
+    </form>
 </div>
 </body>
 </html>

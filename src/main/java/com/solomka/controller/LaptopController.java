@@ -7,6 +7,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 
 import java.util.List;
 
@@ -20,11 +21,14 @@ public class LaptopController {
     }
 
     @GetMapping("/laptop")
-    public String findAllLaptops(Model model){
-        List<Laptop> laptops = laptopService.getAll();
+    public String findAllLaptops(
+            @RequestParam(value = "limit", defaultValue = "10", required  = false) String limit,
+            Model model){
+        List<Laptop> laptops = laptopService.getAll().subList(0,Integer.parseInt(limit));
         model.addAttribute("laptops", laptops);
         return "laptop-list";
     }
+
     @GetMapping("/laptop-sort")
     public String sortLaptopsDesc(Model model){
         List<Laptop> laptops = laptopService.getLaptopsSortedByBrand();
