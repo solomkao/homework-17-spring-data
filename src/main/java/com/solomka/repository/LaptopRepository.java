@@ -7,8 +7,6 @@ import java.util.List;
 
 public interface LaptopRepository  extends JpaRepository<Laptop, Integer>{
     List<Laptop> findByOrderByBrandDesc();
-
     List<Laptop> findLaptopsByMemoryRAMGreaterThanEqual(Integer value);
-
     List<Laptop> findLaptopsByUsedEquals(Boolean used);
 }
