@@ -9,7 +9,6 @@ import org.springframework.stereotype.Service;
 import java.util.List;
 import java.util.NoSuchElementException;
 
-
 @Service
 public class LaptopServiceImpl implements LaptopService {
     private final LaptopRepository repository;
@@ -48,6 +47,4 @@ public class LaptopServiceImpl implements LaptopService {
     public List<Laptop> getUsedLaptops() {
         return repository.findLaptopsByUsedEquals(true);
     }
-
-
 }

@@ -17,7 +17,4 @@ public interface LaptopService {
     List<Laptop> getLaptopsBySizeMemory(Integer value);
 
     List<Laptop> getUsedLaptops();
-
-
-
 }
